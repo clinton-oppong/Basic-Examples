@@ -40,6 +40,19 @@ public class Main {
         System.out.println(sumOdd(100, -100));
         System.out.println(sumOdd(100, 1000));
         System.out.println(sumOdd(10, 5));
+
+        System.out.println("\n");
+
+        System.out.println(" the sum of digits is " + sumDigit(125));
+        System.out.println(" the sum of digits is " + sumDigit(-111));
+
+        System.out.println("\n");
+
+        System.out.println(isPalindrome(-1221));
+        System.out.println(isPalindrome(707));
+        System.out.println(isPalindrome(121));
+        System.out.println(isPalindrome(112212));
+
     }
 
     public static long toMilesPerHours(double kilometerPerHour) {
@@ -220,6 +233,39 @@ public class Main {
     }
 */
 
+
+    public static int sumDigit(int number){
+        if (number < 0 || number <= 10) {
+            return -1;
+        }
+
+        int sum = 0;
+
+        while (number > 0){
+            int digit = number % 10; //it extracts the least-significat number
+            sum += digit;
+
+            number /= 10; // number = number / 10;
+
+        }
+
+        return sum;
+
+    }
+
+    public static boolean isPalindrome(int number) {
+        int reverseNum = 0;
+        int temp = number;
+        while (number != 0) {
+            int lastDigit = number % 10;
+            reverseNum = reverseNum * 10 + lastDigit;
+            number = number / 10;
+        }
+        if (reverseNum == temp) {
+            return true;
+        }
+        return false;
+    }
 
 }
 
