@@ -326,6 +326,23 @@ public class Main {
         return -1;
     }
 
+    public static boolean hasSharedDigit(int first, int last) {
+        if ((-99 >= first) || (10 >= first))
+            return false;
+        while (first <= 10) {
+            int firstNum = first % 10;
+            int flastNum = first % 10;
+            int lFirstNum = last % 10;
+            int lastNum = last % 10;
+            first /= 10;
+            last /= 10;
+            if ((lastNum == firstNum) || (flastNum == lFirstNum)) {
+                return true;
+            }
+
+        }
+        return false;
+    }
 }
 
 
