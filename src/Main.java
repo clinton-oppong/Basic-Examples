@@ -252,19 +252,60 @@ public class Main {
         return sum;
 
     }
+// todo: try and understand and do it again
+//    public static boolean isPalindrome(int number) {
+//        int reverseNum = 0;
+//        int temp = number;
+//        while (number != 0) {
+//            int lastDigit = number % 10;
+//            reverseNum = reverseNum * 10 + lastDigit;
+//            number = number / 10;
+//        }
+//        if (reverseNum == temp) {
+//            return true;
+//        }
+//        return false;
+//    }
 
-    public static boolean isPalindrome(int number) {
-        int reverseNum = 0;
-        int temp = number;
-        while (number != 0) {
-            int lastDigit = number % 10;
-            reverseNum = reverseNum * 10 + lastDigit;
-            number = number / 10;
+// this worked
+    public static boolean isPalindrome(int n){
+        int r, sum = 0, temp;
+        temp = n;
+        while (n>0){
+            r = n % 10;
+            sum = (sum * 10) + r;
+            n = n/ 10;
         }
-        if (reverseNum == temp) {
+        if (n < 0)
             return true;
+
+        if (temp == sum)
+            return true;
+        else
+            return false;
+    }
+
+    public static int sumFirstAndLastDigit(int n) {
+        int last = n % 10;
+        int totalVal = 0;
+        int sum = 0;
+
+        if (n < 0)
+            return  -1;
+
+        while (n != 0) {
+            int first = n % 10;
+            n /= 10;
+            sum = first + last;
         }
-        return false;
+
+        return sum;
+
+
+    }
+
+    public static  int getEvenDigitSum(int n){
+
     }
 
 }
